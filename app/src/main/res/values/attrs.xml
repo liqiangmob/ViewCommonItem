@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="ViewCommonItem">
+
+        <attr name="img_src" format="reference|integer" />
+        <attr name="img_width" format="dimension" />
+        <attr name="img_height" format="dimension" />
+        <attr name="img_left_margin" format="dimension" />
+
+        <attr name="tv_title" format="string" />
+        <attr name="tv_title_single" format="boolean" />
+        <attr name="tv_title_size" format="integer" />
+        <attr name="tv_title_color" format="color" />
+        <attr name="tv_title_left_margin" format="dimension" />
+
+        <attr name="tv_description" format="string" />
+        <attr name="tv_description_single" format="boolean" />
+        <attr name="tv_description_size" format="integer" />
+        <attr name="tv_description_color" format="color" />
+        <attr name="tv_description_right_margin" format="dimension" />
+
+        <attr name="right_img" format="reference|integer" />
+        <attr name="right_img_width" format="dimension" />
+        <attr name="right_img_height" format="dimension" />
+        <attr name="right_img_right_margin" format="dimension" />
+
+        <attr name="bottom_line_show" format="boolean" />
+    </declare-styleable>
+
+
+</resources>
