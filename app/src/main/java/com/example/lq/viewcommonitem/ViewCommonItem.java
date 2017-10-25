@@ -55,7 +55,7 @@ public class ViewCommonItem extends RelativeLayout {
 
     private int defaultRightImgHeight = 0;
     private int defaultRightImgWidth = 0;
-    private int defaultRightImgRightMargin = 20;
+    private int defaultRightImgRightMargin = 14;
 
     private int rightImgHeight;
     private int rightImgWidth;
@@ -201,9 +201,9 @@ public class ViewCommonItem extends RelativeLayout {
         itemRightImage.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         rightImgWidth = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_width, defaultRightImgWidth);
         rightImgHeight = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_height, defaultRightImgHeight);
-        rightImgRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_right_margin, defaultRightImgRightMargin);
+        rightImgRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_right_margin, Utils.dp2px(mContext,defaultRightImgRightMargin));
 
-        Glide.with(mContext).load(attributes.getResourceId(R.styleable.ViewCommonItem_right_img, R.mipmap.ic_launcher)).into(itemRightImage);
+        Glide.with(mContext).load(attributes.getResourceId(R.styleable.ViewCommonItem_right_img, R.mipmap.icon_arrow_orange_right)).into(itemRightImage);
 
         if (rightImgWidth == 0 || rightImgHeight == 0) {
             rightImgWidth = LayoutParams.WRAP_CONTENT;
