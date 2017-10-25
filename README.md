@@ -3,14 +3,22 @@
  ![image](https://github.com/liqiangmob/ViewCommonItem/blob/master/img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-25%20%E4%B8%8B%E5%8D%886.12.51.png)
  
  为了解决这种最常见的item样式的偷懒工作
+
+ 需要就自己copy，简单的view不打jar
  
  极简模式
-    app:show_img="false"//默认显示图片，必须设置为false
-    app:tv_description="adsfasdf"
-    app:tv_title="zhege"
+ 
+ 	<com.example.lq.viewcommonitem.ViewCommonItem
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null"
+        app:show_img="false"//默认显示图片，必须设置为false
+        app:tv_description="adsfasdf"
+        app:tv_title="zhege"
     
 详情模式
-<com.example.lq.viewcommonitem.ViewCommonItem
+
+	<com.example.lq.viewcommonitem.ViewCommonItem
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@null"

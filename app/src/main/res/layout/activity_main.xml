@@ -11,6 +11,7 @@
         android:layout_height="50dp"
         android:background="@null"
         app:img_left_margin="20dp"
+        app:show_img="true"
         app:img_src="@mipmap/ic_launcher"
         app:right_img="@mipmap/icon_share"
         app:right_img_right_margin="10dp"
