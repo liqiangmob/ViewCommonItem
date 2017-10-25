@@ -10,14 +10,12 @@
         <attr name="img_left_margin" format="dimension" />
 
         <attr name="tv_title" format="string" />
-        <attr name="tv_title_single" format="boolean" />
-        <attr name="tv_title_size" format="integer" />
+        <attr name="tv_title_size" format="dimension" />
         <attr name="tv_title_color" format="color" />
         <attr name="tv_title_left_margin" format="dimension" />
 
         <attr name="tv_description" format="string" />
-        <attr name="tv_description_single" format="boolean" />
-        <attr name="tv_description_size" format="integer" />
+        <attr name="tv_description_size" format="dimension" />
         <attr name="tv_description_color" format="color" />
         <attr name="tv_description_right_margin" format="dimension" />
 

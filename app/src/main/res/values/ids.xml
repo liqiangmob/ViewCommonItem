@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <!-- ViewCommonItem -->
+    <item name="item_img" type="id"></item>
+    <item name="item_title" type="id"></item>
+    <item name="item_des" type="id"></item>
+    <item name="item_right_img" type="id"></item>
+
+
+</resources>
