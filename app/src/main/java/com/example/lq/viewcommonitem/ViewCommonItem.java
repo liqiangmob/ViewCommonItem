@@ -25,6 +25,8 @@ public class ViewCommonItem extends RelativeLayout {
     View itemBottomLine;
 
 
+    private boolean imgShow = true;
+
     private int defaultImageWidth = 0;
     private int defaultImageHeight = 0;
     private int defaultImageLeftMargin = 20;
@@ -114,6 +116,7 @@ public class ViewCommonItem extends RelativeLayout {
         ImageWidth = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_img_width, defaultImageWidth);
         ImageHeight = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_img_height, defaultImageHeight);
         ImageLeftMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_img_left_margin, defaultImageLeftMargin);
+        imgShow = attributes.getBoolean(R.styleable.ViewCommonItem_show_img, true);
 
         Glide.with(mContext).load(attributes.getResourceId(R.styleable.ViewCommonItem_img_src, R.mipmap.ic_launcher)).into(itemImage);
         if (ImageHeight == 0 || ImageWidth == 0) {
@@ -127,6 +130,12 @@ public class ViewCommonItem extends RelativeLayout {
         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         layoutParams.addRule(RelativeLayout.ALIGN_LEFT);
         addView(itemImage, layoutParams);
+        if (imgShow) {
+            itemImage.setVisibility(VISIBLE);
+        } else {
+            itemImage.setVisibility(GONE);
+        }
+
 
     }
 
@@ -150,7 +159,12 @@ public class ViewCommonItem extends RelativeLayout {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         layoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.item_img);
-        layoutParams.setMargins(tvTitleLeftMargin, 0, 0, 0);
+
+        if (imgShow){
+            layoutParams.setMargins(tvTitleLeftMargin, 0, 0, 0);
+        }else {
+            layoutParams.setMargins(Utils.dp2px(mContext,defaultImageLeftMargin), 0, 0, 0);
+        }
 
         addView(itemTitle, layoutParams);
 
@@ -202,6 +216,7 @@ public class ViewCommonItem extends RelativeLayout {
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         layoutParams.setMargins(0, 0, rightImgRightMargin, 0);
+
         addView(itemRightImage, layoutParams);
 
     }

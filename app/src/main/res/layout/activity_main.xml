@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <com.example.lq.viewcommonitem.ViewCommonItem
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:background="@null"
         app:img_left_margin="20dp"
-
         app:img_src="@mipmap/ic_launcher"
         app:right_img="@mipmap/icon_share"
         app:right_img_right_margin="8dp"
+        app:tv_description="adsfasdf"
+        app:tv_description_color="@color/cyan_70df57"
+        app:tv_description_right_margin="30dp"
+        app:tv_description_size="12sp"
+        app:tv_title="zhege"
+        app:tv_title_color="@color/orange_ff651a"
+        app:tv_title_left_margin="10dp"
+        app:tv_title_size="10sp"
+
+        ></com.example.lq.viewcommonitem.ViewCommonItem>
+
+    <com.example.lq.viewcommonitem.ViewCommonItem
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null"
+        app:right_img="@mipmap/icon_share"
+        app:right_img_right_margin="8dp"
+        app:show_img="false"
         app:tv_description="adsfasdf"
 
 
@@ -30,4 +47,4 @@
         ></com.example.lq.viewcommonitem.ViewCommonItem>
 
 
-</RelativeLayout>
+</LinearLayout>
