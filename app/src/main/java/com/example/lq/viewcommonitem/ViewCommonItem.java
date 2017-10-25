@@ -49,7 +49,6 @@ public class ViewCommonItem extends RelativeLayout {
     private int defaultTvDescriptionColor;
     private int defaultTvDescriptionRightMargin = 20;
 
-
     private float tvDescriptionSize;
     private int tvDescriptionColor;
     private int tvDescriptionRightMargin;
@@ -141,7 +140,7 @@ public class ViewCommonItem extends RelativeLayout {
 
     private void initItemTitle(TypedArray attributes) {
         itemTitle.setId(R.id.item_title);
-        tvTitleSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_title_size, defaultTvTitleSize);
+        tvTitleSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_title_size, Utils.sp2px(mContext, defaultTvTitleSize));
         tvTitleColor = attributes.getColor(R.styleable.ViewCommonItem_tv_title_color, 0);
         tvTitleLeftMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_title_left_margin, defaultTvTitleLeftMargin);
 
@@ -160,10 +159,10 @@ public class ViewCommonItem extends RelativeLayout {
         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         layoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.item_img);
 
-        if (imgShow){
+        if (imgShow) {
             layoutParams.setMargins(tvTitleLeftMargin, 0, 0, 0);
-        }else {
-            layoutParams.setMargins(Utils.dp2px(mContext,defaultImageLeftMargin), 0, 0, 0);
+        } else {
+            layoutParams.setMargins(Utils.dp2px(mContext, defaultImageLeftMargin), 0, 0, 0);
         }
 
         addView(itemTitle, layoutParams);
@@ -174,7 +173,7 @@ public class ViewCommonItem extends RelativeLayout {
     private void initItemDescription(TypedArray attributes) {
 
         itemDescription.setId(R.id.item_des);
-        tvDescriptionSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_size, defaultTvDescriptionSize);
+        tvDescriptionSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_size, Utils.sp2px(mContext,defaultTvDescriptionSize));
         tvDescriptionColor = attributes.getColor(R.styleable.ViewCommonItem_tv_description_color, 0);
         tvDescriptionRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_right_margin, defaultTvDescriptionRightMargin);
 
