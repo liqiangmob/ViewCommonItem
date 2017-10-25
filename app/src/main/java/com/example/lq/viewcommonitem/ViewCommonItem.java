@@ -37,7 +37,7 @@ public class ViewCommonItem extends RelativeLayout {
 
 
     private int defaultTvTitleSize = 14;
-    private int defaultTvTitleColor;
+    private int defaultTvTitleColor = R.color.colorPrimary;
     private int defaultTvTitleLeftMargin = 5;
 
     private float tvTitleSize;
@@ -46,16 +46,18 @@ public class ViewCommonItem extends RelativeLayout {
 
 
     private int defaultTvDescriptionSize = 12;
-    private int defaultTvDescriptionColor;
+    private int defaultTvDescriptionColor = R.color.colorPrimary;
     private int defaultTvDescriptionRightMargin = 20;
 
     private float tvDescriptionSize;
     private int tvDescriptionColor;
     private int tvDescriptionRightMargin;
 
+    private int defaultRightImage = R.mipmap.icon_arrow_orange_right;
+
     private int defaultRightImgHeight = 0;
     private int defaultRightImgWidth = 0;
-    private int defaultRightImgRightMargin = 14;
+    private int defaultRightImgRightMargin = 20;
 
     private int rightImgHeight;
     private int rightImgWidth;
@@ -63,7 +65,7 @@ public class ViewCommonItem extends RelativeLayout {
 
 
     private boolean defaultBottomLineShow = true;
-
+    private int defaultBottomLineColor = R.color.orange_00000;
 
     private Context mContext;
 
@@ -148,7 +150,7 @@ public class ViewCommonItem extends RelativeLayout {
 
         itemTitle.setText(Utils.safe(title));
         if (tvTitleColor == 0) {
-            itemTitle.setTextColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
+            itemTitle.setTextColor(ContextCompat.getColor(mContext, defaultTvTitleColor));
         } else {
             itemTitle.setTextColor(tvTitleColor);
         }
@@ -173,15 +175,15 @@ public class ViewCommonItem extends RelativeLayout {
     private void initItemDescription(TypedArray attributes) {
 
         itemDescription.setId(R.id.item_des);
-        tvDescriptionSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_size, Utils.sp2px(mContext,defaultTvDescriptionSize));
+        tvDescriptionSize = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_size, Utils.sp2px(mContext, defaultTvDescriptionSize));
         tvDescriptionColor = attributes.getColor(R.styleable.ViewCommonItem_tv_description_color, 0);
-        tvDescriptionRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_right_margin, defaultTvDescriptionRightMargin);
+        tvDescriptionRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_tv_description_right_margin, Utils.dp2px(mContext, defaultTvDescriptionRightMargin));
 
         String description = attributes.getString(R.styleable.ViewCommonItem_tv_description);
         itemDescription.setText(Utils.safe(description));
         itemDescription.setTextSize(Utils.px2sp(mContext, tvDescriptionSize));
         if (tvDescriptionColor == 0) {
-            itemDescription.setTextColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
+            itemDescription.setTextColor(ContextCompat.getColor(mContext, defaultTvDescriptionColor));
         } else {
             itemDescription.setTextColor(tvDescriptionColor);
         }
@@ -203,7 +205,7 @@ public class ViewCommonItem extends RelativeLayout {
         rightImgHeight = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_height, defaultRightImgHeight);
         rightImgRightMargin = attributes.getDimensionPixelSize(R.styleable.ViewCommonItem_right_img_right_margin, Utils.dp2px(mContext,defaultRightImgRightMargin));
 
-        Glide.with(mContext).load(attributes.getResourceId(R.styleable.ViewCommonItem_right_img, R.mipmap.icon_arrow_orange_right)).into(itemRightImage);
+        Glide.with(mContext).load(attributes.getResourceId(R.styleable.ViewCommonItem_right_img, defaultRightImage)).into(itemRightImage);
 
         if (rightImgWidth == 0 || rightImgHeight == 0) {
             rightImgWidth = LayoutParams.WRAP_CONTENT;
@@ -224,12 +226,10 @@ public class ViewCommonItem extends RelativeLayout {
     private void initItemBottomLine(TypedArray attributes) {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        itemBottomLine.setBackgroundColor(ContextCompat.getColor(mContext, R.color.orange_00000));
-
+        itemBottomLine.setBackgroundColor(ContextCompat.getColor(mContext, defaultBottomLineColor));
         if (attributes.getBoolean(R.styleable.ViewCommonItem_bottom_line_show, defaultBottomLineShow)) {
             addView(itemBottomLine, layoutParams);
         }
-
     }
 
 
